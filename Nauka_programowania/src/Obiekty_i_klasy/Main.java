@@ -27,6 +27,10 @@ public class Main {
         System.out.println("Uppercase sentence: " + sentence.toUpperCase());
         System.out.println("Sentence: " + sentence); // metoda toUppercase nie zmienia pierwotnego Stringa - Stringi są immutable
 
+        System.out.println("=================================================================");
+
+
+
 
 
     }
