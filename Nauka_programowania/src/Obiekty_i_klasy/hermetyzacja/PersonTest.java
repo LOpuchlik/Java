@@ -3,7 +3,7 @@ package Obiekty_i_klasy.hermetyzacja;
 public class PersonTest {
 
     public static void main(String[] args) {
-        Person person = new Person("Rachel", "Murillo", 1975, 8, 15);
+        Person person = new Person("Rachel", "Murillo", 1975);
         System.out.println(person.toString());
 
         // person.name = "Elena";  //nie dziala z powodu hermetyzacji

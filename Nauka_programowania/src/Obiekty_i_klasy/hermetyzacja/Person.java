@@ -1,19 +1,17 @@
 package Obiekty_i_klasy.hermetyzacja;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Person {
     private String name;
     private String surname;
-    //private int year;
-    //private int month;
-    //private int day;
     private int age;
 
-    public Person(String name, String surname, int yearOfBirth, int monthOfBirth, int dayOfBirth){
+    public Person(String name, String surname, int yearOfBirth){
         this.name = name;
         this.surname = surname;
-        this.age = (LocalDate.now()).getYear()-(LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth).getYear());
+        this.age = LocalDate.now().getYear() - yearOfBirth;
     }
 
     public String getName() {
