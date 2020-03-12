@@ -1,7 +1,6 @@
 package Obiekty_i_klasy.hermetyzacja;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 public class Person {
     private String name;
