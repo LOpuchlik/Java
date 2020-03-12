@@ -8,8 +8,8 @@ public class Rounding {
         System.out.println(Math.round(PI*10000d)/10000d);
 
         double x = 2;
-        double res = Math.pow(x, 16); // metoda statyczna - nie jest potrzebny zaden obiekt klasy Math
-        System.out.println("2^16 is equal to: " + (int)(res));
+        double res = Math.pow(x, 10); // metoda statyczna - nie jest potrzebny zaden obiekt klasy Math
+        System.out.println("2^10 is equal to: " + (int)(res));
 
 
     }
