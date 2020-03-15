@@ -1,8 +1,10 @@
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -23,6 +25,11 @@ public class ListViewSelectingMultipleItems extends Application {
         window.setTitle("ListView");
         button = new Button("Submit");
 
+        listView = new ListView<>();
+        listView.getItems().addAll("Iron Man", "Titanic", "Harry Potter", "Aliens");
+        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        button.setOnAction(evnt -> buttonClicked());
 
 
         VBox layout = new VBox(10);
@@ -34,6 +41,17 @@ public class ListViewSelectingMultipleItems extends Application {
         window.show();
 
 
+    }
+
+    private void buttonClicked() {
+        String message = "";
+        ObservableList<String> movies;
+        movies = listView.getSelectionModel().getSelectedItems();
+
+        for (String m : movies)
+            message += m+"\n";
+
+        System.out.println(message);
     }
 
 }
