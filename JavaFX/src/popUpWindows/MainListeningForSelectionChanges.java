@@ -20,17 +20,20 @@ public class MainListeningForSelectionChanges extends  Application{
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         window.setTitle("Choice Box");
-        Button button = new Button("Click");
 
-        ChoiceBox<String> strChoiceBox = new ChoiceBox<>();
-        strChoiceBox.getItems().addAll("Apples", "Bananas", "Lemons", "Strwaberries", "Blueberries");
-        strChoiceBox.setValue("Apples"); // Set a default value
 
-        button.setOnAction(evnt -> getChoice(strChoiceBox));
+        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        choiceBox.getItems().addAll("Apples", "Bananas", "Lemons", "Strwaberries", "Blueberries");
+        choiceBox.setValue("Apples"); // Set a default value
+
+        // Listen for selection changes
+        choiceBox.getSelectionModel().selectedItemProperty().addListener( (v, oldValue, newValue) -> System.out.println(newValue));
+
+
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(15,15,15,15));
-        layout.getChildren().addAll(strChoiceBox, button);
+        layout.getChildren().addAll(choiceBox);
 
 
         Scene scene = new Scene(layout, 300, 200);
@@ -38,10 +41,6 @@ public class MainListeningForSelectionChanges extends  Application{
         window.show();
     }
 
-    private void getChoice(ChoiceBox<String> strChoiceBox) {
-        String food = strChoiceBox.getValue();
-        System.out.println(food);
-    }
 }
 
 
