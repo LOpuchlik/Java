@@ -22,18 +22,16 @@ public class MainTreeView extends Application {
         window = primaryStage;
         window.setTitle("TreeView");
 
-
         TreeItem<String> root, jagoda, michal;
 
         // root
         root = new TreeItem<>();  // container for all the branches
-        root.setExpanded(true); // all subtrees and subflies are visible
+        root.setExpanded(true); // all subtrees and subfiles are visible
 
         // Jagoda branch
         jagoda = makeBranch("Jagoda", root);
         makeBranch("javaFX", jagoda);
         makeBranch("movies", jagoda);
-
 
         // Michal branch
         michal = makeBranch("Michal", root);
@@ -43,11 +41,15 @@ public class MainTreeView extends Application {
         // Create tree
         tree = new TreeView<>(root);
         tree.setShowRoot(false);
+        tree.getSelectionModel().selectedItemProperty().addListener( (value, oldValue, newValue) ->  {
+            if (newValue != null)
+                System.out.println(newValue.getValue());
+        });
 
 
         StackPane layout = new StackPane();
         layout.getChildren().add(tree);
-        scene = new Scene(layout, 300, 200);
+        scene = new Scene(layout, 300, 300);
         window.setScene(scene);
         window.show();
 
