@@ -26,7 +26,7 @@ public class MainConfirmBox extends Application {
         button = new Button("Click me!");
         button.setOnAction(evnt -> {
             boolean result = ConfirmBox.display("ConfirmBox", "Are you sick?");
-            if (result == true)
+            if (result)
                 System.out.println("Yes");
             else
                 System.out.println("No");
