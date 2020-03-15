@@ -1,4 +1,4 @@
-package popUpWindows;
+package alertBox;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,7 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-public class MainConfirmBox extends Application {
+public class MainAlertBox extends Application {
 
     Stage window;
     Button button;
@@ -24,13 +24,7 @@ public class MainConfirmBox extends Application {
 
 
         button = new Button("Click me!");
-        button.setOnAction(evnt -> {
-            boolean result = ConfirmBox.display("ConfirmBox", "Are you sick?");
-            if (result)
-                System.out.println("Yes");
-            else
-                System.out.println("No");
-        });
+        button.setOnAction(evnt -> AlertBox.display("AlertBox", "AWESOME ALERT BOX"));
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
@@ -39,4 +33,3 @@ public class MainConfirmBox extends Application {
         window.show();
     }
 }
-
